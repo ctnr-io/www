@@ -53,7 +53,7 @@ Deno.serve({
   try {
     // For HTML files, inject a simple reload script
     if (filepath.endsWith(".html")) {
-      const content = await Deno.readTextFile("public" + filepath);
+      const content = await Deno.readTextFile("docs" + filepath);
       const injectedContent = content.replace(
         "</body>",
         html`<script>
@@ -79,7 +79,7 @@ Deno.serve({
     }
     
     // Serve static files
-    const file = await Deno.open("public" + filepath, { read: true });
+    const file = await Deno.open("docs" + filepath, { read: true });
     return new Response(file.readable);
   } catch {
     return new Response("404 Not Found", { status: 404 });
