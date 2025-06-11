@@ -5,6 +5,8 @@
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
     "@tmpl/core": "jsr:@tmpl/core@^0.5.25",
-    "@tmpl/gen": "jsr:@tmpl/gen@^0.5.25"
+    "@tmpl/gen": "jsr:@tmpl/gen@^0.5.25",
+    "zod": "npm:zod@^3.25.64",
+    "src/": "./src/"
   }
 }
