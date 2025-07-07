@@ -6,27 +6,28 @@ export type HomePage = {
 };
 
 export default layout({
+  title: "ctnr.io - Cloud made simple",
   children: html`
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-      
-      .font-biko {
-        font-family: 'Biko Bold', 'Inter', sans-serif;
-        font-weight: 800;
-      }
-      
-      .text-brand-orange { color: #f8b500; }
-      .text-brand-dark { color: #393e46; }
-      .text-brand-white { color: #ffffff; }
-      .bg-brand-orange { background-color: #f8b500; }
-      .bg-brand-dark { background-color: #393e46; }
-      .bg-brand-white { background-color: #ffffff; }
-      .border-brand-orange { border-color: #f8b500; }
-      .border-brand-dark { border-color: #393e46; }
-      .hover\:bg-brand-orange:hover { background-color: #f8b500; }
-      .hover\:text-brand-dark:hover { color: #393e46; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    .font-biko {
+      font-family: 'Biko Bold', 'Inter', sans-serif;
+      font-weight: 800;
+    }
+
+    .text-brand-orange { color: #f8b500; }
+    .text-brand-dark { color: #393e46; }
+    .text-brand-white { color: #ffffff; }
+    .bg-brand-orange { background-color: #f8b500; }
+    .bg-brand-dark { background-color: #393e46; }
+    .bg-brand-white { background-color: #ffffff; }
+    .border-brand-orange { border-color: #f8b500; }
+    .border-brand-dark { border-color: #393e46; }
+    .hover\\:bg-brand-orange:hover { background-color: #f8b500; }
+    .hover\\:text-brand-dark:hover { color: #393e46; }
     </style>
-    
+
     <div class="w-full min-h-screen bg-brand-white">
       <!-- Header -->
       <header class="border-b border-gray-200">
@@ -37,9 +38,18 @@ export default layout({
             class="h-10 w-auto"
           >
           <nav class="hidden md:flex space-x-8">
-            <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-            <a href="#install" class="text-gray-600 hover:text-gray-900 transition-colors">Install</a>
-            <a href="https://github.com/ctnr-io" class="text-gray-600 hover:text-gray-900 transition-colors">GitHub</a>
+            <a
+              href="#features"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+            >Features</a>
+            <a
+              href="#install"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+            >Install</a>
+            <a
+              href="https://github.com/ctnr-io"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+            >GitHub</a>
           </nav>
         </div>
       </header>
@@ -47,88 +57,110 @@ export default layout({
       <!-- Hero Section -->
       <main class="max-w-6xl mx-auto px-6 py-16 text-center">
         <h1 class="text-5xl md:text-6xl font-bold text-brand-dark mb-6 font-biko">
-          Deploy
-          <span class="text-brand-orange">Anywhere</span>,
-          Instantly
+          Cloud made
+          <span class="text-brand-orange">simple</span>.
         </h1>
-        <p class="text-xl text-brand-dark mb-12 max-w-3xl mx-auto">
-          Cloud platform that gets your containers running in 
-          <span class="text-brand-orange font-semibold">seconds</span>.
-          Built for developers who value speed and simplicity.
+        <p class="text-xl text-brand-dark mb-8 max-w-3xl mx-auto">
+          Lightning fast container platform with <span
+            class="text-brand-orange font-semibold"
+          >GDPR compliance</span> and one-click integrations. Deploy your entire
+          stack from <span class="text-brand-orange font-semibold">€0</span> to
+          enterprise scale.
         </p>
-        
+
+        <!-- Value Props -->
+        <div class="flex flex-wrap justify-center gap-6 mb-12 text-sm">
+          <div class="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+            <span class="text-green-700 font-medium"
+            >Start Free - Unlimited Projects</span>
+          </div>
+          <div class="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full">
+            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span class="text-blue-700 font-medium">GDPR Compliant</span>
+          </div>
+          <div class="flex items-center gap-2 bg-purple-50 px-4 py-2 rounded-full">
+            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+            <span class="text-purple-700 font-medium">Open Source</span>
+          </div>
+        </div>
+
         <!-- Install Command -->
-        <div id="install" class="bg-gray-100 rounded-lg p-6 mb-12 max-w-2xl mx-auto">
-          <h3 class="text-lg font-semibold text-brand-dark mb-4">Get Started in One Command</h3>
+        <div
+          id="install"
+          class="bg-gray-100 rounded-lg p-6 mb-12 max-w-2xl mx-auto"
+        >
+          <h3 class="text-lg font-semibold text-brand-dark mb-4">
+            Get Started in One Command
+          </h3>
           <div class="bg-brand-dark rounded-md p-4 text-left relative">
             <code class="text-green-400 font-mono text-sm md:text-base">
               curl -fsSL https://get.ctnr.io | bash
             </code>
-            <button 
-              onclick="copyInstallCommand()" 
+            <button
+              onclick="copyInstallCommand()"
               class="absolute right-2 top-3 bg-brand-orange hover:bg-brand-orange text-brand-white px-3 py-1 rounded text-sm transition-colors"
               id="copyBtn"
             >
               Copy
             </button>
           </div>
-          <p class="text-sm text-brand-dark mt-2">Works on Linux, macOS, and Windows (WSL)</p>
+          <p class="text-sm text-brand-dark mt-2">
+            Works on Linux, macOS, and Windows (WSL)
+          </p>
         </div>
 
         <!-- Quick Start Steps -->
         <div class="grid md:grid-cols-3 gap-6 mb-12">
           <div class="bg-brand-white border border-gray-200 rounded-lg p-6">
-            <div class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <div
+              class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center mb-4 mx-auto"
+            >
               <span class="text-brand-white font-bold text-xl">1</span>
             </div>
-            <h3 class="font-semibold text-brand-dark mb-2">Install ctnr</h3>
-            <p class="text-brand-dark text-sm">Run the install command above</p>
+            <h3 class="font-semibold text-brand-dark mb-2">Install CLI</h3>
+            <p class="text-brand-dark text-sm">
+              Run the install command above
+            </p>
           </div>
           <div class="bg-brand-white border border-gray-200 rounded-lg p-6">
-            <div class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <div
+              class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center mb-4 mx-auto"
+            >
               <span class="text-brand-white font-bold text-xl">2</span>
             </div>
-            <h3 class="font-semibold text-brand-dark mb-2">Login & Run</h3>
-            <p class="text-brand-dark text-sm">Use <code class="bg-brand-dark px-2 py-1 rounded text-brand-orange font-mono">ctnr login</code> then <code class="bg-brand-dark px-2 py-1 rounded text-brand-orange font-mono">ctnr run</code></p>
+            <h3 class="font-semibold text-brand-dark mb-2">Deploy</h3>
+            <p class="text-brand-dark text-sm">
+              Deploy your first container in seconds
+            </p>
           </div>
           <div class="bg-brand-white border border-gray-200 rounded-lg p-6">
-            <div class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <div
+              class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center mb-4 mx-auto"
+            >
               <span class="text-brand-white font-bold text-xl">3</span>
             </div>
-            <h3 class="font-semibold text-brand-dark mb-2">Scale & Manage</h3>
-            <p class="text-brand-dark text-sm">Monitor and manage your deployments</p>
-          </div>
-        </div>
-
-        <!-- CLI Commands -->
-        <div class="bg-gray-100 rounded-lg p-6 mb-12 max-w-4xl mx-auto">
-          <h3 class="text-lg font-semibold text-brand-dark mb-4">Available Commands</h3>
-          <div class="bg-brand-dark rounded-md p-4 text-left">
-            <div class="space-y-2 font-mono text-sm">
-              <div class="text-gray-400">Usage: <span class="text-brand-white">ctnr [options] [command]</span></div>
-              <div class="text-gray-400">Available subcommands: <span class="text-brand-orange">login, logout, run, list, attach</span></div>
-              <div class="mt-3 space-y-1">
-                <div><span class="text-green-400">login</span> <span class="text-gray-400">- Authenticate with ctnr.io</span></div>
-                <div><span class="text-green-400">logout</span> <span class="text-gray-400">- Sign out from ctnr.io</span></div>
-                <div><span class="text-green-400">run [options]</span> <span class="text-gray-400">- Deploy and run your containers</span></div>
-                <div><span class="text-green-400">list</span> <span class="text-gray-400">- List your deployments</span></div>
-                <div><span class="text-green-400">attach [options]</span> <span class="text-gray-400">- Connect to a running container</span></div>
-                <div><span class="text-green-400">help [command]</span> <span class="text-gray-400">- Display help for command</span></div>
-              </div>
-            </div>
+            <h3 class="font-semibold text-brand-dark mb-2">Scale</h3>
+            <p class="text-brand-dark text-sm">Scale your products</p>
           </div>
         </div>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <button 
-            onclick="scrollToInstall()" 
+          <button
+            onclick="signUp()"
             class="px-8 py-3 bg-brand-orange text-brand-white rounded-lg hover:bg-brand-orange transition-colors font-semibold"
           >
-            Get Started Now
+            Sign Up Free
           </button>
-          <a 
-            href="https://github.com/ctnr-io" 
+          <button
+            onclick="scrollToPricing()"
+            class="px-8 py-3 border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-colors font-semibold"
+          >
+            View Pricing
+          </button>
+          <a
+            href="https://github.com/ctnr-io"
             class="px-8 py-3 border border-brand-dark text-brand-dark rounded-lg hover:bg-gray-100 transition-colors font-semibold"
           >
             View on GitHub
@@ -136,46 +168,640 @@ export default layout({
         </div>
       </main>
 
-      <!-- Features Section -->
-      <section id="features" class="bg-gray-100 py-16">
+      <!-- Pricing Section -->
+      <section id="pricing" class="py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6">
-          <h2 class="text-3xl font-bold text-center text-brand-dark mb-12">Why Choose ctnr.io?</h2>
+          <h2 class="text-3xl font-bold text-center text-brand-dark mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="text-center text-brand-dark mb-12 max-w-2xl mx-auto">
+            Start free and scale with your needs. No hidden fees, no vendor lock-in.
+          </p>
+
+          <!-- Pricing Calculator -->
+          <div class="bg-white rounded-lg shadow-lg p-8 mb-12 max-w-4xl mx-auto">
+            <h3 class="text-xl font-semibold text-brand-dark mb-6 text-center">
+              Calculate Your Monthly Cost
+            </h3>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+              <div>
+                <label class="block text-sm font-medium text-brand-dark mb-2"
+                >CPU Cores</label>
+                <input
+                  type="range"
+                  id="cpuSlider"
+                  min="0.5"
+                  max="16"
+                  step="0.5"
+                  value="2"
+                  class="w-full"
+                >
+                <div class="flex justify-between text-sm text-gray-500 mt-1">
+                  <span>0.5</span>
+                  <span id="cpuValue" class="font-medium text-brand-dark">2</span>
+                  <span>16</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-brand-dark mb-2"
+                >Memory (GB)</label>
+                <input
+                  type="range"
+                  id="memorySlider"
+                  min="0.5"
+                  max="64"
+                  step="0.5"
+                  value="4"
+                  class="w-full"
+                >
+                <div class="flex justify-between text-sm text-gray-500 mt-1">
+                  <span>0.5</span>
+                  <span id="memoryValue" class="font-medium text-brand-dark"
+                  >4</span>
+                  <span>64</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-brand-dark mb-2"
+                >Storage (GB)</label>
+                <input
+                  type="range"
+                  id="storageSlider"
+                  min="1"
+                  max="1000"
+                  step="1"
+                  value="20"
+                  class="w-full"
+                >
+                <div class="flex justify-between text-sm text-gray-500 mt-1">
+                  <span>1</span>
+                  <span id="storageValue" class="font-medium text-brand-dark"
+                  >20</span>
+                  <span>1000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing Results -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="text-center">
+                  <h4 class="font-semibold text-brand-dark mb-2">
+                    Subscription Plan
+                  </h4>
+                  <div class="text-3xl font-bold text-brand-orange mb-2">
+                    €<span id="subscriptionPrice">10</span><span
+                      class="text-lg text-gray-500"
+                    >/month</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Best for consistent workloads
+                  </p>
+                  <button
+                    onclick="startSubscription()"
+                    class="w-full px-4 py-2 bg-brand-orange text-white rounded-lg hover:bg-brand-orange transition-colors"
+                  >
+                    Start Subscription
+                  </button>
+                </div>
+
+                <div class="text-center">
+                  <h4 class="font-semibold text-brand-dark mb-2">Pay-as-you-go</h4>
+                  <div class="text-3xl font-bold text-gray-600 mb-2">
+                    €<span id="paygoPrice">15</span><span
+                      class="text-lg text-gray-500"
+                    >/month</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Perfect for testing & irregular usage
+                  </p>
+                  <button
+                    onclick="startPaygo()"
+                    class="w-full px-4 py-2 border border-brand-dark text-brand-dark rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    Start Pay-as-you-go
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600">
+                  Save €<span id="savings">5</span>/month with subscription plan
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing Tiers -->
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Free Tier -->
+            <div class="bg-white rounded-lg shadow-lg p-8 relative">
+              <div class="text-center mb-6">
+                <h3 class="text-xl font-semibold text-brand-dark mb-2">Free</h3>
+                <div class="text-4xl font-bold text-brand-dark mb-2">€0</div>
+                <p class="text-gray-600">Perfect for getting started</p>
+              </div>
+
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">1 vCPU, 2GB RAM, 1GB Storage</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">Unlimited Projects</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">Community Support</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">No Credit Card Required</span>
+                </li>
+              </ul>
+
+              <button
+                onclick="startFree()"
+                class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              >
+                Start Free
+              </button>
+            </div>
+
+            <!-- Subscription Tier -->
+            <div
+              class="bg-white rounded-lg shadow-lg p-8 relative border-2 border-brand-orange"
+            >
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span
+                  class="bg-brand-orange text-white px-4 py-1 rounded-full text-sm font-medium"
+                >Most Popular</span>
+              </div>
+
+              <div class="text-center mb-6">
+                <h3 class="text-xl font-semibold text-brand-dark mb-2">
+                  Subscription
+                </h3>
+                <div class="text-4xl font-bold text-brand-dark mb-2">€2/vCPU</div>
+                <p class="text-gray-600">Best for consistent workloads</p>
+              </div>
+
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">Everything in Free</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark"
+                  >€2/vCPU, €1/GB RAM, €0.10/GB Storage</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">Priority Support & SLA</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark"
+                  >Lower costs than pay-as-you-go</span>
+                </li>
+              </ul>
+
+              <button
+                onclick="startSubscription()"
+                class="w-full px-4 py-2 bg-brand-orange text-white rounded-lg hover:bg-brand-orange transition-colors"
+              >
+                Start Subscription
+              </button>
+            </div>
+
+            <!-- Pay-as-you-go Tier -->
+            <div class="bg-white rounded-lg shadow-lg p-8 relative">
+              <div class="text-center mb-6">
+                <h3 class="text-xl font-semibold text-brand-dark mb-2">
+                  Pay-as-you-go
+                </h3>
+                <div class="text-4xl font-bold text-brand-dark mb-2">€3/vCPU</div>
+                <p class="text-gray-600">Perfect for testing & irregular usage</p>
+              </div>
+
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">Everything in Free</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark"
+                  >€3/vCPU, €1.50/GB RAM, €0.15/GB Storage</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">Community Support</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    >
+                    </path>
+                  </svg>
+                  <span class="text-brand-dark">No commitment required</span>
+                </li>
+              </ul>
+
+              <button
+                onclick="startPaygo()"
+                class="w-full px-4 py-2 border border-brand-dark text-brand-dark rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Start Pay-as-you-go
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Integrations Section -->
+      <section class="py-16 bg-brand-white">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center text-brand-dark mb-4">
+            One-Click Integrations
+          </h2>
+          <p class="text-center text-brand-dark mb-12 max-w-2xl mx-auto">
+            Deploy your entire stack with pre-configured integrations. No complex
+            setup, just click and deploy.
+          </p>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-8 h-8 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-brand-dark mb-2">Keycloak</h3>
+              <p class="text-brand-dark text-sm mb-4">
+                Identity & Access Management with SSO, LDAP, and OAuth2 support
+              </p>
+              <button class="text-brand-orange text-sm font-medium hover:underline">
+                Deploy Now →
+              </button>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-brand-dark mb-2">Supabase</h3>
+              <p class="text-brand-dark text-sm mb-4">
+                PostgreSQL database with Auth, APIs, and real-time subscriptions
+              </p>
+              <button class="text-brand-orange text-sm font-medium hover:underline">
+                Deploy Now →
+              </button>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-8 h-8 text-purple-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-brand-dark mb-2">n8n</h3>
+              <p class="text-brand-dark text-sm mb-4">
+                Workflow automation with 200+ integrations and visual editor
+              </p>
+              <button class="text-brand-orange text-sm font-medium hover:underline">
+                Deploy Now →
+              </button>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-8 h-8 text-orange-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-brand-dark mb-2">Grafana</h3>
+              <p class="text-brand-dark text-sm mb-4">
+                Monitoring & analytics with beautiful dashboards and alerts
+              </p>
+              <button class="text-brand-orange text-sm font-medium hover:underline">
+                Deploy Now →
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <p class="text-brand-dark mb-4">Need a custom integration?</p>
+            <button
+              class="px-6 py-2 border border-brand-orange text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-colors"
+            >
+              Request Integration
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sovereignty & Compliance Section -->
+      <section class="py-16 bg-brand-dark text-brand-white">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-4">
+            Why Choose ctnr.io?
+          </h2>
+          <p class="text-center mb-12 max-w-2xl mx-auto text-gray-300">
+            Built for European businesses who value data sovereignty, privacy, and
+            performance without compromising on simplicity.
+          </p>
+
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
-              <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              <div
+                class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto"
+              >
+                <svg
+                  class="w-8 h-8 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  >
+                  </path>
                 </svg>
               </div>
-              <h3 class="font-semibold text-brand-dark mb-2">Lightning Fast</h3>
-              <p class="text-brand-dark text-sm">Deploy containers in seconds, not minutes</p>
+              <h3 class="font-semibold mb-2">🇪🇺 GDPR Compliant</h3>
+              <p class="text-sm text-gray-300">
+                Built-in GDPR compliance with data processing transparency and user
+                rights protection
+              </p>
             </div>
+
             <div class="text-center">
-              <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              <div
+                class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto"
+              >
+                <svg
+                  class="w-8 h-8 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  >
+                  </path>
                 </svg>
               </div>
-              <h3 class="font-semibold text-brand-dark mb-2">Simple Setup</h3>
-              <p class="text-brand-dark text-sm">One command installation, zero configuration</p>
+              <h3 class="font-semibold mb-2">⚡ Lightning Fast</h3>
+              <p class="text-sm text-gray-300">
+                Deploy containers in seconds, not minutes
+              </p>
             </div>
+
             <div class="text-center">
-              <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              <div
+                class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4 mx-auto"
+              >
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  >
+                  </path>
                 </svg>
               </div>
-              <h3 class="font-semibold text-brand-dark mb-2">Open Source</h3>
-              <p class="text-brand-dark text-sm">Built on open source, transparent and extensible</p>
+              <h3 class="font-semibold mb-2">📦 Open Source</h3>
+              <p class="text-sm text-gray-300">
+                Built on open source, transparent and extensible
+              </p>
             </div>
+
             <div class="text-center">
-              <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              <div
+                class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 mx-auto"
+              >
+                <svg
+                  class="w-8 h-8 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  >
+                  </path>
                 </svg>
               </div>
-              <h3 class="font-semibold text-brand-dark mb-2">Any Platform</h3>
-              <p class="text-brand-dark text-sm">Deploy to any cloud, on-premise, or edge</p>
+              <h3 class="font-semibold mb-2">🔐 Zero-Trust Security</h3>
+              <p class="text-sm text-gray-300">
+                End-to-end encryption, network isolation, and zero-trust
+                architecture by default
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <div
+              class="bg-brand-orange/10 border border-brand-orange/20 rounded-lg p-6 max-w-2xl mx-auto"
+            >
+              <h4 class="font-semibold text-brand-orange mb-2">
+                💰 Save €100K+ Annually on Infrastructure Management
+              </h4>
+              <p class="text-sm text-gray-300">
+                Stop paying premium prices for complex DevOps tools. Get
+                enterprise-grade infrastructure without the enterprise complexity.
+              </p>
             </div>
           </div>
         </div>
@@ -184,47 +810,142 @@ export default layout({
       <!-- Footer -->
       <footer class="border-t border-gray-200 py-8">
         <div class="max-w-6xl mx-auto px-6 text-center">
-          <p class="text-gray-500">© 2025 ctnr.io. Open source cloud platform for everyone.</p>
+          <p class="text-gray-500">
+            © 2025 ctnr.io. Open source cloud platform for everyone.
+          </p>
           <div class="mt-4 flex justify-center space-x-6">
-            <a href="https://github.com/ctnr-io" class="text-gray-400 hover:text-gray-600 transition-colors">GitHub</a>
-            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">Documentation</a>
-            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">Community</a>
+            <a
+              href="https://github.com/ctnr-io"
+              class="text-gray-400 hover:text-gray-600 transition-colors"
+            >GitHub</a>
+            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors"
+            >Documentation</a>
+            <a href="https://discord.gg/mnjdMe6b" class="text-gray-400 hover:text-gray-600 transition-colors"
+            >Discord</a>
           </div>
         </div>
       </footer>
     </div>
 
     <script>
-      function copyInstallCommand() {
-        const command = 'curl -fsSL https://get.ctnr.io | bash';
-        navigator.clipboard.writeText(command).then(() => {
-          const btn = document.getElementById('copyBtn');
-          const originalText = btn.textContent;
-          btn.textContent = 'Copied!';
-          btn.classList.add('bg-green-600');
-          btn.classList.remove('bg-orange-500');
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.classList.remove('bg-green-600');
-            btn.classList.add('bg-orange-500');
-          }, 2000);
-        });
-      }
-
-      function scrollToInstall() {
-        document.getElementById('install').scrollIntoView({ behavior: 'smooth' });
-      }
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
+    function copyInstallCommand() {
+      const command = 'curl -fsSL https://get.ctnr.io | bash';
+      navigator.clipboard.writeText(command).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('bg-green-600');
+        btn.classList.remove('bg-orange-500');
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.remove('bg-green-600');
+          btn.classList.add('bg-orange-500');
+        }, 2000);
       });
+    }
+
+    function scrollToInstall() {
+      document.getElementById('install').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToPricing() {
+      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Pricing Calculator
+    function updatePricing() {
+      const cpu = parseFloat(document.getElementById('cpuSlider').value);
+      const memory = parseFloat(document.getElementById('memorySlider').value);
+      const storage = parseFloat(document.getElementById('storageSlider').value);
+
+      // Update display values
+      document.getElementById('cpuValue').textContent = cpu;
+      document.getElementById('memoryValue').textContent = memory;
+      document.getElementById('storageValue').textContent = storage;
+
+      // Calculate billable resources (subtract free tier: 1 vCPU, 2GB RAM, 1GB Storage)
+      const billableCpu = Math.max(0, cpu - 1);
+      const billableMemory = Math.max(0, memory - 2);
+      const billableStorage = Math.max(0, storage - 1);
+
+      // Calculate prices (€2/vCPU, €1/GB RAM, €0.10/GB Storage)
+      const subscriptionPrice = Math.round((billableCpu * 2) + (billableMemory * 1) + (billableStorage * 0.1));
+      const paygoPrice = Math.round((billableCpu * 3) + (billableMemory * 1.5) + (billableStorage * 0.15));
+      const savings = paygoPrice - subscriptionPrice;
+
+      // Update pricing display
+      document.getElementById('subscriptionPrice').textContent = subscriptionPrice;
+      document.getElementById('paygoPrice').textContent = paygoPrice;
+      document.getElementById('savings').textContent = Math.max(0, savings);
+    }
+
+    // Sign Up Function
+    function signUp() {
+      // For now, redirect to install section - replace with actual signup flow
+      alert('Sign up for ctnr.io to get started!\\n\\n1. Create your account\\n2. Install the CLI\\n3. Deploy your first container\\n\\nAccount creation coming soon!');
+      scrollToInstall();
+    }
+
+    // Payment Functions
+    function startFree() {
+      // Redirect to registration/CLI download
+      window.location.href = '#install';
+      scrollToInstall();
+    }
+
+    function startSubscription() {
+      // Integrate with Mollie for subscription
+      const cpu = parseFloat(document.getElementById('cpuSlider').value);
+      const memory = parseFloat(document.getElementById('memorySlider').value);
+      const storage = parseFloat(document.getElementById('storageSlider').value);
+      const price = Math.round((cpu * 2) + (memory * 1) + (storage * 0.1));
+
+      // For now, show alert - replace with actual Mollie integration
+      alert('Starting subscription for €' + price + '/month\\nCPU: '+cpu+' cores\\nMemory: '+memory+'GB\\nStorage: '+storage+'GB\\n\\nMollie payment integration coming soon!');
+    }
+
+    function startPaygo() {
+      // Integrate with Mollie for pay-as-you-go
+      const cpu = parseFloat(document.getElementById('cpuSlider').value);
+      const memory = parseFloat(document.getElementById('memorySlider').value);
+      const storage = parseFloat(document.getElementById('storageSlider').value);
+      const price = Math.round((cpu * 3) + (memory * 1.5) + (storage * 0.15));
+
+      // For now, show alert - replace with actual Mollie integration
+      alert('Starting pay-as-you-go for €'+price+ '/month\\nCPU: '+cpu+ ' cores\\nMemory: '+memory+ 'GB\\nStorage: '+storage+ 'GB\\n\\nMollie payment integration coming soon!');
+    }
+
+    function startPro() {
+      // Redirect to Pro signup
+      alert('Pro plan signup coming soon! Contact us for early access.');
+    }
+
+    function contactSales() {
+      // Open contact form or email
+      window.location.href = 'mailto:sales@ctnr.io?subject=Enterprise Inquiry&body=Hi, I am interested in the Enterprise plan for ctnr.io. Please contact me to discuss our requirements.';
+    }
+
+    // Initialize pricing calculator
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add event listeners to sliders
+      document.getElementById('cpuSlider').addEventListener('input', updatePricing);
+      document.getElementById('memorySlider').addEventListener('input', updatePricing);
+      document.getElementById('storageSlider').addEventListener('input', updatePricing);
+
+      // Initial calculation
+      updatePricing();
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
     </script>
   `,
 });
