@@ -5,8 +5,26 @@ export type HomePage = {
   children?: string;
 };
 
+const FreeTier = {
+	cpu: 1,
+	ram: 1,
+	storage: 1,
+}
+
+const SubscriptionTier = {
+	cpuPrice: 2,
+	ramPrice: 2,
+	storagePrice: 0.2,
+}
+
+const PayAsYouGoTier = {
+	cpuPrice: 3,
+	ramPrice: 3,
+	storagePrice: 0.3,
+}
+
 export default layout({
-  title: "ctnr.io - Cloud made simple",
+  title: "ctnr.io - Cloud made simple.",
   children: html`
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -73,7 +91,7 @@ export default layout({
           <div class="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
             <span class="w-2 h-2 bg-green-500 rounded-full"></span>
             <span class="text-green-700 font-medium"
-            >Start Free - Unlimited Projects</span>
+            >Start Free - Unlimited Containers</span>
           </div>
           <div class="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full">
             <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
@@ -191,55 +209,51 @@ export default layout({
                 <input
                   type="range"
                   id="cpuSlider"
-                  min="0.5"
+                  min="0"
                   max="16"
                   step="0.5"
-                  value="2"
+                  value="4"
                   class="w-full"
                 >
                 <div class="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>0.5</span>
+                  <span>0</span>
                   <span id="cpuValue" class="font-medium text-brand-dark">2</span>
                   <span>16</span>
                 </div>
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-brand-dark mb-2"
-                >Memory (GB)</label>
+                <label class="block text-sm font-medium text-brand-dark mb-2">Memory (GB)</label>
                 <input
                   type="range"
                   id="memorySlider"
-                  min="0.5"
+                  min="0"
                   max="64"
-                  step="0.5"
-                  value="4"
+                  step="1"
+                  value="8"
                   class="w-full"
                 >
                 <div class="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>0.5</span>
-                  <span id="memoryValue" class="font-medium text-brand-dark"
-                  >4</span>
+                  <span>0</span>
+                  <span id="memoryValue" class="font-medium text-brand-dark">4</span>
                   <span>64</span>
                 </div>
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-brand-dark mb-2"
-                >Storage (GB)</label>
+                <label class="block text-sm font-medium text-brand-dark mb-2">Storage (GB)</label>
                 <input
                   type="range"
                   id="storageSlider"
-                  min="1"
+                  min="0"
                   max="1000"
-                  step="1"
-                  value="20"
+                  step="10"
+                  value="50"
                   class="w-full"
                 >
                 <div class="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>1</span>
-                  <span id="storageValue" class="font-medium text-brand-dark"
-                  >20</span>
+                  <span>0</span>
+                  <span id="storageValue" class="font-medium text-brand-dark">20</span>
                   <span>1000</span>
                 </div>
               </div>
@@ -319,7 +333,7 @@ export default layout({
                     >
                     </path>
                   </svg>
-                  <span class="text-brand-dark">1 vCPU, 2GB RAM, 1GB Storage</span>
+                  <span class="text-brand-dark">${FreeTier.cpu} vCPU, ${FreeTier.ram}GB RAM, ${FreeTier.storage}GB Storage</span>
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
@@ -334,7 +348,7 @@ export default layout({
                     >
                     </path>
                   </svg>
-                  <span class="text-brand-dark">Unlimited Projects</span>
+                  <span class="text-brand-dark">Unlimited Containers</span>
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
@@ -382,15 +396,14 @@ export default layout({
             >
               <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <span
-                  class="bg-brand-orange text-white px-4 py-1 rounded-full text-sm font-medium"
-                >Most Popular</span>
+                  class="bg-brand-orange text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
               </div>
 
               <div class="text-center mb-6">
                 <h3 class="text-xl font-semibold text-brand-dark mb-2">
                   Subscription
                 </h3>
-                <div class="text-4xl font-bold text-brand-dark mb-2">€2/vCPU</div>
+                <div class="text-4xl font-bold text-brand-dark mb-2">€${SubscriptionTier.cpuPrice}/vCPU</div>
                 <p class="text-gray-600">Best for consistent workloads</p>
               </div>
 
@@ -424,7 +437,7 @@ export default layout({
                     </path>
                   </svg>
                   <span class="text-brand-dark"
-                  >€2/vCPU, €1/GB RAM, €0.10/GB Storage</span>
+                  >€${SubscriptionTier.cpuPrice}/vCPU, €${SubscriptionTier.ramPrice}/GB RAM, €${SubscriptionTier.storagePrice}/GB Storage</span>
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
@@ -473,7 +486,7 @@ export default layout({
                 <h3 class="text-xl font-semibold text-brand-dark mb-2">
                   Pay-as-you-go
                 </h3>
-                <div class="text-4xl font-bold text-brand-dark mb-2">€3/vCPU</div>
+                <div class="text-4xl font-bold text-brand-dark mb-2">€${PayAsYouGoTier.cpuPrice}/vCPU</div>
                 <p class="text-gray-600">Perfect for testing & irregular usage</p>
               </div>
 
@@ -507,7 +520,7 @@ export default layout({
                     </path>
                   </svg>
                   <span class="text-brand-dark"
-                  >€3/vCPU, €1.50/GB RAM, €0.15/GB Storage</span>
+                  >€${PayAsYouGoTier.cpuPrice}/vCPU, €${PayAsYouGoTier.ramPrice}/GB RAM, €${PayAsYouGoTier.storagePrice}/GB Storage</span>
                 </li>
                 <li class="flex items-center gap-3">
                   <svg
@@ -852,7 +865,7 @@ export default layout({
       document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Pricing Calculator
+    // Pricing Calculat15r
     function updatePricing() {
       const cpu = parseFloat(document.getElementById('cpuSlider').value);
       const memory = parseFloat(document.getElementById('memorySlider').value);
@@ -864,13 +877,13 @@ export default layout({
       document.getElementById('storageValue').textContent = storage;
 
       // Calculate billable resources (subtract free tier: 1 vCPU, 2GB RAM, 1GB Storage)
-      const billableCpu = Math.max(0, cpu - 1);
-      const billableMemory = Math.max(0, memory - 2);
-      const billableStorage = Math.max(0, storage - 1);
+      const billableCpu = Math.max(0, cpu - ${FreeTier.cpu});
+      const billableMemory = Math.max(0, memory - ${FreeTier.ram});
+      const billableStorage = Math.max(0, storage - ${FreeTier.storage});
 
       // Calculate prices (€2/vCPU, €1/GB RAM, €0.10/GB Storage)
-      const subscriptionPrice = Math.round((billableCpu * 2) + (billableMemory * 1) + (billableStorage * 0.1));
-      const paygoPrice = Math.round((billableCpu * 3) + (billableMemory * 1.5) + (billableStorage * 0.15));
+      const subscriptionPrice = Math.round((billableCpu * ${SubscriptionTier.cpuPrice}) + (billableMemory * ${SubscriptionTier.ramPrice}) + (billableStorage * ${SubscriptionTier.storagePrice}));
+      const paygoPrice = Math.round((billableCpu * ${PayAsYouGoTier.cpuPrice}) + (billableMemory * ${PayAsYouGoTier.ramPrice}) + (billableStorage * ${PayAsYouGoTier.storagePrice}));
       const savings = paygoPrice - subscriptionPrice;
 
       // Update pricing display
