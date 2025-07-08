@@ -191,121 +191,8 @@
             Start free and scale with your needs. No hidden fees, no vendor lock-in.
           </p>
 
-          <!-- Pricing Calculator -->
-          <div class="bg-white rounded-lg shadow-lg p-8 mb-12 max-w-4xl mx-auto">
-            <h3 class="text-xl font-semibold text-brand-dark mb-6 text-center">
-              Calculate Your Monthly Cost
-            </h3>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-6">
-              <div>
-                <label class="block text-sm font-medium text-brand-dark mb-2"
-                >CPU Cores</label>
-                <input
-                  type="range"
-                  id="cpuSlider"
-                  min="0"
-                  max="16"
-                  step="0.5"
-                  value="4"
-                  class="w-full"
-                >
-                <div class="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>0</span>
-                  <span id="cpuValue" class="font-medium text-brand-dark">2</span>
-                  <span>16</span>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-brand-dark mb-2">Memory (GB)</label>
-                <input
-                  type="range"
-                  id="memorySlider"
-                  min="0"
-                  max="64"
-                  step="1"
-                  value="8"
-                  class="w-full"
-                >
-                <div class="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>0</span>
-                  <span id="memoryValue" class="font-medium text-brand-dark">4</span>
-                  <span>64</span>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-brand-dark mb-2">Storage (GB)</label>
-                <input
-                  type="range"
-                  id="storageSlider"
-                  min="0"
-                  max="1000"
-                  step="10"
-                  value="50"
-                  class="w-full"
-                >
-                <div class="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>0</span>
-                  <span id="storageValue" class="font-medium text-brand-dark">20</span>
-                  <span>1000</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pricing Results -->
-            <div class="bg-gray-50 rounded-lg p-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="text-center">
-                  <h4 class="font-semibold text-brand-dark mb-2">
-                    Subscription Plan
-                  </h4>
-                  <div class="text-3xl font-bold text-brand-orange mb-2">
-                    €<span id="subscriptionPrice">10</span><span
-                      class="text-lg text-gray-500"
-                    >/month</span>
-                  </div>
-                  <p class="text-sm text-gray-600 mb-4">
-                    Best for consistent workloads
-                  </p>
-                  <button
-                    onclick="startSubscription()"
-                    class="w-full px-4 py-2 bg-brand-orange text-white rounded-lg hover:bg-brand-orange transition-colors"
-                  >
-                    Start Subscription
-                  </button>
-                </div>
-
-                <div class="text-center">
-                  <h4 class="font-semibold text-brand-dark mb-2">Pay-as-you-go</h4>
-                  <div class="text-3xl font-bold text-gray-600 mb-2">
-                    €<span id="paygoPrice">15</span><span
-                      class="text-lg text-gray-500"
-                    >/month</span>
-                  </div>
-                  <p class="text-sm text-gray-600 mb-4">
-                    Perfect for testing & irregular usage
-                  </p>
-                  <button
-                    onclick="startPaygo()"
-                    class="w-full px-4 py-2 border border-brand-dark text-brand-dark rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    Start Pay-as-you-go
-                  </button>
-                </div>
-              </div>
-
-              <div class="mt-6 text-center">
-                <p class="text-sm text-gray-600">
-                  Save €<span id="savings">5</span>/month with subscription plan
-                </p>
-              </div>
-            </div>
-          </div>
-
           <!-- Pricing Tiers -->
-          <div class="grid md:grid-cols-3 gap-8">
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
             <!-- Free Tier -->
             <div class="bg-white rounded-lg shadow-lg p-8 relative">
               <div class="text-center mb-6">
@@ -555,6 +442,119 @@
               >
                 Start Pay-as-you-go
               </button>
+            </div>
+          </div>
+
+          <!-- Pricing Calculator -->
+          <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
+            <h3 class="text-xl font-semibold text-brand-dark mb-6 text-center">
+              Calculate Your Monthly Cost
+            </h3>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+              <div>
+                <label class="block text-sm font-medium text-brand-dark mb-2"
+                >CPU Cores</label>
+                <input
+                  type="range"
+                  id="cpuSlider"
+                  min="0"
+                  max="16"
+                  step="0.5"
+                  value="1"
+                  class="w-full"
+                >
+                <div class="flex justify-between text-sm text-gray-500 mt-1">
+                  <span>0</span>
+                  <span id="cpuValue" class="font-medium text-brand-dark">2</span>
+                  <span>16</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-brand-dark mb-2">Memory (GB)</label>
+                <input
+                  type="range"
+                  id="memorySlider"
+                  min="0"
+                  max="64"
+                  step="1"
+                  value="1"
+                  class="w-full"
+                >
+                <div class="flex justify-between text-sm text-gray-500 mt-1">
+                  <span>0</span>
+                  <span id="memoryValue" class="font-medium text-brand-dark">4</span>
+                  <span>64</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-brand-dark mb-2">Storage (GB)</label>
+                <input
+                  type="range"
+                  id="storageSlider"
+                  min="0"
+                  max="1000"
+                  step="10"
+                  value="10"
+                  class="w-full"
+                >
+                <div class="flex justify-between text-sm text-gray-500 mt-1">
+                  <span>0</span>
+                  <span id="storageValue" class="font-medium text-brand-dark">20</span>
+                  <span>1000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing Results -->
+            <div class="bg-gray-50 rounded-lg p-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="text-center">
+                  <h4 class="font-semibold text-brand-dark mb-2">
+                    Subscription Plan
+                  </h4>
+                  <div class="text-3xl font-bold text-brand-orange mb-2">
+                    €<span id="subscriptionPrice">10</span><span
+                      class="text-lg text-gray-500"
+                    >/month</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Best for consistent workloads
+                  </p>
+                  <button
+                    onclick="startSubscription()"
+                    class="w-full px-4 py-2 bg-brand-orange text-white rounded-lg hover:bg-brand-orange transition-colors"
+                  >
+                    Start Subscription
+                  </button>
+                </div>
+
+                <div class="text-center">
+                  <h4 class="font-semibold text-brand-dark mb-2">Pay-as-you-go</h4>
+                  <div class="text-3xl font-bold text-gray-600 mb-2">
+                    €<span id="paygoPrice">15</span><span
+                      class="text-lg text-gray-500"
+                    >/month</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Perfect for testing & irregular usage
+                  </p>
+                  <button
+                    onclick="startPaygo()"
+                    class="w-full px-4 py-2 border border-brand-dark text-brand-dark rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    Start Pay-as-you-go
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600">
+                  Save €<span id="savings">5</span>/month with subscription plan
+                </p>
+              </div>
             </div>
           </div>
         </div>
